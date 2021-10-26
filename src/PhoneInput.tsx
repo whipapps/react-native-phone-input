@@ -1,6 +1,6 @@
 import React from 'react'; // eslint-disable-line import/no-extraneous-dependencies
 import {
-    Image, TextInput, TouchableWithoutFeedback, View
+    Image, TextInput, TouchableOpacity, View
 } from 'react-native';
 import Country from './country';
 import Flags from './resources/flags';
@@ -215,18 +215,22 @@ export default class PhoneInput<TextComponentType extends React.ComponentType = 
 
     render() {
         const { iso2, displayValue, disabled } = this.state;
+        const country = this.getAllCountries().find(c => c.iso2 === iso2)
         const TextComponent: any = this.props.textComponent || TextInput;
         return (
             <View style={[styles.container, this.props.style]}>
-                <TouchableWithoutFeedback
+                <TouchableOpacity
                     onPress={this.onPressFlag}
                     disabled={disabled}
+                    accessibilityRole="imagebutton"
+                    accessibilityLabel={country ? country.name : iso2}
                 >
                     <Image
+                        accessibilityIgnoresInvertColors={true}
                         source={Flags.get(iso2)}
                         style={[styles.flag, this.props.flagStyle]}
                     />
-                </TouchableWithoutFeedback>
+                </TouchableOpacity>
                 <View style={{ flex: 1, marginLeft: this.props.offset || 10 }}>
                     <TextComponent
                         ref={(ref) => {
