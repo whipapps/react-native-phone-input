@@ -27,13 +27,14 @@ module.exports = {
         'max-len': ['error', { code: 160 }],
         'no-plusplus': 'off',
         'import/no-unresolved': 'off',
+        '@typescript-eslint/ban-types': 'off',
         indent: [
             'error',
             4,
         ],
         'comma-dangle': ['warn', 'only-multiline'],
         'react/sort-comp': [
-            2,
+            1,
             {
                 order: ['static-variables', 'static-methods', 'instance-variables', 'constructor', 'lifecycle', 'everything-else', 'render']
             }

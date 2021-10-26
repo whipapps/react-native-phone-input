@@ -1,12 +1,12 @@
 {
   "name": "react-native-phone-input",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Phone input box for React Native",
   "main": "dist/index.js",
   "scripts": {
     "build": "./bin/build.sh",
-    "lint-fix": "./node_modules/.bin/eslint --quiet --ext .js,.jsx,.ts,.tsx --fix ./",
-    "lint": "./node_modules/.bin/eslint --quiet --ext .js,.jsx,.ts,.tsx ./",
+    "lint-fix": "./node_modules/.bin/eslint --ext .js,.jsx,.ts,.tsx --fix ./",
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx,.ts,.tsx ./",
     "test": "./node_modules/.bin/mocha -r ./node_modules/ts-node/register -r tsconfig-paths/register --config .mocharc.js ./tests/**/*.test.ts --exit",
     "test-coverage": "./node_modules/.bin/nyc --config ./nyc.config.js npm run test",
     "prepare": "npm run build"
@@ -44,8 +44,8 @@
     "@types/mocha": "^5.2.7",
     "@types/react-native": "^0.63.48",
     "@types/react-native-phone-input": "^0.2.1",
-    "@typescript-eslint/eslint-plugin": "^2.12.0",
-    "@typescript-eslint/parser": "^2.12.0",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
     "chai": "^4.2.0",
     "eslint": "^7.18.0",
     "eslint-config-airbnb-base": "^14.2.1",

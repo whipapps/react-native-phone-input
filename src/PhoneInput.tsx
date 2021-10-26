@@ -1,4 +1,4 @@
-import React from 'react'; // eslint-disable-line import/no-extraneous-dependencies
+import React from 'react'; // eslint-disable-line import/no-extraneous-dependencies, no-use-before-define
 import {
     Image, TextInput, TouchableOpacity, View
 } from 'react-native';
@@ -67,7 +67,7 @@ export default class PhoneInput<TextComponentType extends React.ComponentType = 
     onChangePhoneNumber = (number) => {
         const actionAfterSetState = this.props.onChangePhoneNumber
             ? (displayValue: string, iso2: string) => {
-                    this.props.onChangePhoneNumber?.(displayValue, iso2);
+                this.props.onChangePhoneNumber?.(displayValue, iso2);
             }
             : null;
         this.updateValue(number, actionAfterSetState);
@@ -215,7 +215,7 @@ export default class PhoneInput<TextComponentType extends React.ComponentType = 
 
     render() {
         const { iso2, displayValue, disabled } = this.state;
-        const country = this.getAllCountries().find(c => c.iso2 === iso2)
+        const country = this.getAllCountries().find((c) => c.iso2 === iso2);
         const TextComponent: any = this.props.textComponent || TextInput;
         return (
             <View style={[styles.container, this.props.style]}>
