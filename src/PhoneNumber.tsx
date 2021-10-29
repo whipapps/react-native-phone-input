@@ -103,8 +103,8 @@ class PhoneNumber {
 
     getNumberType(number, iso2) {
         const phoneInfo = this.parse(number, iso2);
-        const type = phoneInfo ? phoneUtil.getNumberType(phoneInfo) : -1;
-        return _.findKey((numType, noType) => noType === type);
+        const typeIndex = phoneInfo ? phoneUtil.getNumberType(phoneInfo) : -1;
+        return _.findKey(numberType, (noType) => noType === typeIndex);
     }
 
     // eslint-disable-next-line class-methods-use-this
