@@ -27,7 +27,7 @@ export default class PhoneInput<TextComponentType extends React.ComponentType = 
         } = this.props;
 
         const {
-            countriesList, disabled,
+            countriesList, disabled
         } = this.props;
 
         if (countriesList) {
@@ -205,6 +205,10 @@ export default class PhoneInput<TextComponentType extends React.ComponentType = 
             : number;
     }
 
+    getAccessibilityLabel() {
+        return this.props.accessibilityLabel || 'Telephone input';
+    }
+
     focus() {
         this.inputPhone.focus();
     }
@@ -236,6 +240,7 @@ export default class PhoneInput<TextComponentType extends React.ComponentType = 
                         ref={(ref) => {
                             this.inputPhone = ref;
                         }}
+                        accessibilityLabel={this.getAccessibilityLabel()}
                         editable={!disabled}
                         autoCorrect={false}
                         style={[styles.text, this.props.textStyle]}
