@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import Country from './country';
 import Flags from './resources/flags';
-import PhoneNumber from './phoneNumber';
+import PhoneNumber from './PhoneNumber';
 import styles from './styles';
 import CountryPicker from './CountryPicker';
 import { ReactNativePhoneInputProps } from './typings';
