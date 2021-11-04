@@ -55,6 +55,10 @@ export interface ReactNativeCountryPickerState {
 
 export interface ReactNativePhoneInputProps<TextComponentType extends React.ComponentType = typeof TextInput> {
     /**
+     * Override accessibility label for telephone input
+     */
+    accessibilityLabel?: string;
+    /**
      * Format input while typing
      */
     autoFormat?: boolean;
