@@ -158,6 +158,10 @@ export interface ReactNativePhoneInputProps<TextComponentType extends React.Comp
      * Function to be invoked when confirming country picker selection
      */
     onPressConfirm?: () => void;
+    /**
+     * Render function to replace the default flag
+     */
+    renderFlag?: ({ imageSource }: { imageSource: number }) => Element;
 }
 
 export default class ReactNativePhoneInput<

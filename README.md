@@ -145,6 +145,26 @@ render(){
 
 [see full custom library picker example](https://github.com/thegamenicorus/react-native-phone-input/blob/master/examples/CustomLibraryPicker/app.js)
 
+## Custom Flag component 
+
+If you need to change how the flag is rendered, you can use the `renderFlag` property. This function is passed the flag image source as a named `imageSource` argument.
+
+> Note: if you just need custom styles for the flag image, you can pass the `flagStyle` prop, only use `renderFlag` if you need to change what components are actually rendered within the touchable area of the flag.
+
+```jsx
+<PhoneInput 
+    renderFlag={({ imageSource }) => {
+        return (
+            <View>
+                <Icon name="chevron" />
+                <Image source={imageSource} width={customWidth} height={customHeight} style={customStyles} />
+            </View>
+        )
+    }}
+/>
+```
+
+
 ## Custom Countries
 
 ```jsx
@@ -155,31 +175,32 @@ render(){
 
 ### Properties:
 
-| Property Name             | Type             | Default           | Description                                                                    |
-| ------------------------- | ---------------- | ------------------| ------------------------------------------------------------------------------ |
-| autoFormat                | boolean          | false             | Format phone number while typing                                               |
-| accessibilityLabel        | string           | 'Telephone input' | Label for accessibility purposes                                               |
-| initialCountry            | string           | 'us'              | initial selected country                                                       |
-| allowZeroAfterCountryCode | bool             | true              | allow user input 0 after country code                                          |
-| disabled                  | bool             | false             | if true, disable all interaction of this component                             |
-| initialValue              | string           | null              | initial phone number                                                           |
-| style                     | object           | null              | custom styles to be applied if supplied                                        |
-| flagStyle                 | object           | null              | custom styles for flag image eg. {{width: 50, height: 30, borderWidth:0}}      |
-| textStyle                 | object           | null              | custom styles for phone number text input eg. {{fontSize: 14}}                 |
-| textProps                 | object           | null              | properties for phone number text input eg. {{placeholder: 'Telephone number'}} |
-| textComponent             | function         | TextField         | the input component to use                                                     |
-| offset                    | int              | 10                | distance between flag and phone number                                         |
-| pickerButtonColor         | string           | '#007AFF'         | set button color of country picker                                             |
-| pickerBackgroundColor     | string           | 'white'           | set background color of country picker                                         |
-| pickerItemStyle           | object           | null              | custom styles for text in country picker eg. {{fontSize: 14}}                  |
-| cancelText                | string           | 'Cancel'          | cancel word                                                                    |
-| confirmText               | string           | 'Confirm'         | confirm word                                                                   |
-| cancelTextStyle           | object           | null              | custom styles for country picker cancel button                                 |
-| confirmTextStyle          | object           | null              | custom styles for country picker confirm button                                |
-| onChangePhoneNumber       | function(number) | null              | function to be invoked when phone number is changed                            |
-| onSelectCountry           | function(iso2)   | null              | function to be invoked when country picker is selected                         |
-| onPressFlag               | function()       | null              | function to be invoked when press on flag image                                |
-| countriesList             | array            | null              | custom countries list                                                          |
+| Property Name             | Type                      | Default           | Description                                                                    |
+| ------------------------- | ------------------------- | ------------------| ------------------------------------------------------------------------------ |
+| autoFormat                | boolean                   | false             | Format phone number while typing                                               |
+| accessibilityLabel        | string                    | 'Telephone input' | Label for accessibility purposes                                               |
+| initialCountry            | string                    | 'us'              | initial selected country                                                       |
+| allowZeroAfterCountryCode | bool                      | true              | allow user input 0 after country code                                          |
+| disabled                  | bool                      | false             | if true, disable all interaction of this component                             |
+| initialValue              | string                    | null              | initial phone number                                                           |
+| style                     | object                    | null              | custom styles to be applied if supplied                                        |
+| flagStyle                 | object                    | null              | custom styles for flag image eg. {{width: 50, height: 30, borderWidth:0}}      |
+| textStyle                 | object                    | null              | custom styles for phone number text input eg. {{fontSize: 14}}                 |
+| textProps                 | object                    | null              | properties for phone number text input eg. {{placeholder: 'Telephone number'}} |
+| textComponent             | function                  | TextField         | the input component to use                                                     |
+| offset                    | int                       | 10                | distance between flag and phone number                                         |
+| pickerButtonColor         | string                    | '#007AFF'         | set button color of country picker                                             |
+| pickerBackgroundColor     | string                    | 'white'           | set background color of country picker                                         |
+| pickerItemStyle           | object                    | null              | custom styles for text in country picker eg. {{fontSize: 14}}                  |
+| cancelText                | string                    | 'Cancel'          | cancel word                                                                    |
+| confirmText               | string                    | 'Confirm'         | confirm word                                                                   |
+| cancelTextStyle           | object                    | null              | custom styles for country picker cancel button                                 |
+| confirmTextStyle          | object                    | null              | custom styles for country picker confirm button                                |
+| onChangePhoneNumber       | function(number)          | null              | function to be invoked when phone number is changed                            |
+| onSelectCountry           | function(iso2)            | null              | function to be invoked when country picker is selected                         |
+| onPressFlag               | function()                | null              | function to be invoked when press on flag image                                |
+| renderFlag                | function({ imageSource }) | null              | custom render function for the flag component, passed an image src             |
+| countriesList             | array                     | null              | custom countries list                                                          |
 
 ### Functions:
 

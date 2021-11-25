@@ -229,11 +229,19 @@ export default class PhoneInput<TextComponentType extends React.ComponentType = 
                     accessibilityRole="imagebutton"
                     accessibilityLabel={country ? country.name : iso2}
                 >
-                    <Image
-                        accessibilityIgnoresInvertColors={true}
-                        source={Flags.get(iso2)}
-                        style={[styles.flag, this.props.flagStyle]}
-                    />
+                    {this.props.renderFlag ? (
+                        <>
+                            {this.props.renderFlag({
+                                imageSource: Flags.get(iso2),
+                            })}
+                        </>
+                    ) : (
+                        <Image
+                            accessibilityIgnoresInvertColors={true}
+                            source={Flags.get(iso2)}
+                            style={[styles.flag, this.props.flagStyle]}
+                        />
+                    )}
                 </TouchableOpacity>
                 <View style={{ flex: 1, marginLeft: this.props.offset || 10 }}>
                     <TextComponent
