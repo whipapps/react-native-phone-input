@@ -118,6 +118,7 @@ class FlagResource {
             kg: require('./images/kg.png'),
             kh: require('./images/kh.png'),
             ki: require('./images/ki.png'),
+            xk: require('./images/xk.png'),
             km: require('./images/km.png'),
             kn: require('./images/kn.png'),
             kp: require('./images/kp.png'),

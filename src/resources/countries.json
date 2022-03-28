@@ -831,6 +831,13 @@
     "areaCodes": null
   },
   {
+    "name": "Kosovo",
+    "iso2": "xk",
+    "dialCode": "383",
+    "priority": 0,
+    "areaCodes": null
+  },
+  {
     "name": "Kuwait (‫الكويت‬‎)",
     "iso2": "kw",
     "dialCode": "965",
