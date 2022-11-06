@@ -68,7 +68,7 @@ class PhoneNumber {
     parse(number, iso2) {
         try {
             return phoneUtil.parse(number, iso2);
-        } catch (err) {
+        } catch (err: any) {
             console.log(`Exception was thrown: ${err.toString()}`);
             return null;
         }
