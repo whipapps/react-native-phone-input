@@ -87,7 +87,7 @@ class PhoneNumber {
     // eslint-disable-next-line class-methods-use-this
     format(number, iso2) {
         const formatter = new asYouTypeFormatter(iso2); // eslint-disable-line new-cap
-        let formatted;
+        let formatted = "";
 
         number.replace(/-/g, '')
             .replace(/ /g, '')
