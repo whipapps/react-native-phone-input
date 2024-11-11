@@ -110,8 +110,11 @@ export default class PhoneInput<TextComponentType extends React.ComponentType = 
         return PhoneNumber.getDialCode(this.state.value);
     }
 
-    getValue(text?) {
-        return text ? text.replace(/[^0-9]/g, '') : this.state.value;
+    getValue(text) {
+        if (typeof text === 'string') {
+            return text.replace(/[^0-9]/g, '');
+        } 
+        return this.state.value;
     }
 
     getNumberType() {
